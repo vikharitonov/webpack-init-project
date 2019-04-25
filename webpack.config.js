@@ -4,23 +4,32 @@ const { HotModuleReplacementPlugin } = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/js/index.js',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist')
   },
   module: {
     rules: [
-        { 
-            test: /\.less$/,
-            use: [ 
-                'style-loader',
-                'css-loader', 
-                'less-loader'
-            ],
-        },
+      {
+        test: /\.less$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'less-loader'
+        ],
+      },
+      {
+        test: /\.html$/,
+        use: [ {
+          loader: 'html-loader',
+          options: {
+            minimize: true
+          }
+        }],
+      }
     ]
-},
+  },
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist',
