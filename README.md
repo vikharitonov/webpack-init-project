@@ -1,9 +1,9 @@
 # Initial project
 ## Used technologie
 
-+ webpack
-+ typescript
-+ lodash
++ [webpack](https://webpack.js.org/)
++ [typescript](https://www.typescriptlang.org/)
++ [lodash](https://lodash.com/)
 
 ## To initialize project locally you need:
 + **git** installed
