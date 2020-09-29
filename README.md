@@ -6,9 +6,9 @@
 + [lodash](https://lodash.com/)
 
 ## To initialize project locally you need:
-+ **git** installed
-+ **NodeJS** installed
-+ **npm** or **yarn** as package manager
++ **[git](https://git-scm.com/)** installed
++ **[NodeJS](https://nodejs.org/en/)** installed
++ **[npm](https://www.npmjs.com/)** or **[yarn](https://yarnpkg.com/)** as package manager
 + open terminal
 + clone this repository:  `git clone`
 + navigate to cloned directory 
