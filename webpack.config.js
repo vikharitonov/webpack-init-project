@@ -1,9 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HandlebarsPlugin = require("handlebars-webpack-plugin")
 const { HotModuleReplacementPlugin } = require('webpack');
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: './src/index.js',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist')
@@ -11,9 +12,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
+        test: /\.hbs$/,
+        loader: "handlebars-loader"
+      },
+      {
+        test: /\.(js|jsx|tsx|ts)$/,
         exclude: /node_modules/,
+        loader: 'babel-loader'
       },
       {
         test: /\.less$/,
@@ -35,7 +40,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['*', '.js', '.jsx', '.tsx', '.ts'],
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -44,7 +49,21 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: "Generic Head Title",
+      template: 'index.html'
+    }),
+    new HandlebarsPlugin({
+
+      htmlWebpackPlugin: {
+        enabled: true,
+        prefix: "html",
+        HtmlWebpackPlugin
+      },
+
+      entry: path.join(process.cwd(), "src", "**", "*.hbs"),
+      output: path.join(process.cwd(), "dist", "[name].html"),
+    }),
     new HotModuleReplacementPlugin()
   ]
 };

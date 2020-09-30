@@ -1,0 +1,27 @@
+@import './variables.less';
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+*,*:before,*,*:after{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+:focus, :active{outline: none;}
+a:focus, a:active{outline: none;}
+
+html, body{
+  height:@default-size;
+  width:@default-size;
+  font-size:@default-size;
+  line-height: 1;
+  font-size: 14px;
+  -moz-text-size-adjust: @default-size;
+  -ms-text-size-adjust: @default-size;
+  -webkit-text-size-adjust: @default-size;
+}
+
+input, button, textarea {font-family: inherit;}

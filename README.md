@@ -2,7 +2,8 @@
 ## Used technologie
 
 + [webpack](https://webpack.js.org/)
-+ [typescript](https://www.typescriptlang.org/)
++ [jest](https://jestjs.io/)
++ [handlebars](https://handlebarsjs.com/)
 + [lodash](https://lodash.com/)
 
 ## To initialize project locally you need:
