@@ -1,5 +1,6 @@
 import './styles/general.less';
 import template from './template.hbs';
+import Navigation from './PresentationalComponents/Navigation';
 
 export const app = {
   createAppElement() {
@@ -10,4 +11,4 @@ export const app = {
   }
 }
 
-document.body.appendChild(app.createAppElement());
+window.onload = () => document.body.appendChild(Navigation.render());
