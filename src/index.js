@@ -1,6 +1,7 @@
 import './styles/general.less';
 import template from './template.hbs';
 import Navigation from './PresentationalComponents/Navigation';
+import Calendar from './PresentationalComponents/Calendar';
 
 export const app = {
   createAppElement() {
@@ -11,4 +12,7 @@ export const app = {
   }
 }
 
-window.onload = () => document.body.appendChild(Navigation.render());
+window.onload = () => {
+  document.body.appendChild(Navigation.render())
+  document.body.appendChild(Calendar.render())
+};
